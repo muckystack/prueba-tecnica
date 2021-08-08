@@ -1,0 +1,20 @@
+.btn.btn-lg.btn-outline-primary {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background-color: rgb(245, 248, 255) !important;
+}
+.btn.btn-lg.btn-outline-primary:hover {
+  background-color: var(--blue) !important;
+}
+
+@media (max-width: 768px) {
+  .btn.btn-lg.btn-outline-primary {
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+    background-color: var(--blue) !important;
+    color: var(--white) !important;
+    width: 100%;
+  }
+}

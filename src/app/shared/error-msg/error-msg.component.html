@@ -1,0 +1,25 @@
+<!-- {{ error | json }} -->
+
+<div *ngIf="error !== null">
+  <div *ngIf="error?.pattern?.requiredPattern === '^[^@]+@[^@]+\.[a-zA-Z]{2,}$'">
+    <small class="text-danger">No es una dirección correcta</small>
+  </div>
+  <div *ngIf="error?.pattern?.requiredPattern === '/^([0-9])*$/'">
+    <small class="text-danger">Solo se permiten números</small>
+  </div>
+  <div *ngIf="error?.required">
+    <small class="text-danger">El campo es requerido</small>
+  </div>
+  <div *ngIf="error?.minlength">
+    <small class="text-danger">No cumples con los caracteres minimos, ingresaste {{ error?.minlength?.actualLength }} de {{ error?.minlength?.requiredLength }}</small>
+  </div>
+  <div *ngIf="error?.maxlength">
+    <small class="text-danger">Solo puede ingresar {{ error?.maxlength?.requiredLength }} caracteres</small>
+  </div>
+  <div *ngIf="error?.max">
+    <small class="text-danger">Solo puede ingresar hasta el valor {{ error?.max?.max }}</small>
+  </div>
+  <div *ngIf="error?.NoPassswordMatch">
+    <small class="text-danger">Las contraseñas con coinciden</small>
+  </div>
+</div>

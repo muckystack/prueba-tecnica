@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="col-12 d-flex flex-wrap">
+    <app-tarjeta-presentacion class="col-md-6 mt-2 p-1" *ngFor="let item of listaPersonas" [persona]="item" (eliminarPersona)="eliminar($event)"></app-tarjeta-presentacion>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Nueva persona</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-formulario-personal (nuevaPersona)="nuevo($event, modal)" [editarPersona]="editarPersona" (editada)="modal.dismiss('Cross click')"></app-formulario-personal>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+  <fa-icon [icon]="faPlus"></fa-icon> Registrar
+</button>

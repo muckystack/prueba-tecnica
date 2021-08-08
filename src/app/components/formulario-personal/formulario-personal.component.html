@@ -1,0 +1,26 @@
+<div class="container mt-5 mb-5">
+  <form class="row" [formGroup]="formValidator" (submit)="esEditar ? editar() : guardar()" #form>
+    <div class="form-group col-md-12">
+      <label for="nombre">Nombre:</label>
+      <input type="text" class="form-control" id="nombre" formControlName="nombre">
+      <app-error-msg *ngIf="formValidator.get('nombre').touched" [error]="formValidator.get('nombre').errors"></app-error-msg>
+    </div>
+    <div class="form-group col-md-12">
+      <label for="edad">Edad:</label>
+      <input type="text" class="form-control" id="edad" formControlName="edad">
+      <app-error-msg *ngIf="formValidator.get('edad').touched" [error]="formValidator.get('edad').errors"></app-error-msg>
+    </div>
+    <div class="form-group col-md-12">
+      <label for="frase">Frase:</label>
+      <input type="text" class="form-control" id="frase" formControlName="frase">
+      <app-error-msg *ngIf="formValidator.get('frase').touched" [error]="formValidator.get('frase').errors"></app-error-msg>
+    </div>
+    <div class="col-12 d-flex justify-content-end" *ngIf="!esEditar">
+      <button type="submit" class="btn btn-dark">Guardar</button>
+    </div>
+    <div class="col-12 d-flex justify-content-end" *ngIf="esEditar">
+      <button type="submit" class="btn btn-warning m-1">Editar</button>
+      <button type="button" class="btn btn-light m-1" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>
