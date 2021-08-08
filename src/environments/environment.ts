@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://40ddd3d842eb.ngrok.io',
-  // socketUrl: '',
+  baseUrl: 'https://jsonplaceholder.typicode.com/',
 };
 
 /*

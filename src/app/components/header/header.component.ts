@@ -9,8 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 export class HeaderComponent implements OnInit {
   /** Representa las pestañas del menú */
   navbar = [
-    { title: 'Personas', link: '/app/personas' },
-    // { title: 'Post', link: '/app/post' },
+    { title: 'Personas', link: 'personas' },
+    { title: 'Post', link: 'posts' },
   ];
 
   constructor() {}

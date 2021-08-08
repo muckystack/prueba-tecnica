@@ -1,0 +1,15 @@
+<div class="container mt-5 mb-5">
+
+  <h1 class="mt-5 mb-5">Comentarios</h1>
+
+  <div class="card mb-4" *ngFor="let item of comentarios">
+    <div class="card-header">
+      {{ item?.email }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ item?.name }}</h5>
+      <p class="card-text">{{ item?.body }}</p>
+    </div>
+  </div>
+
+</div>

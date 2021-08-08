@@ -1,0 +1,15 @@
+<div class="container mt-5 mb-5">
+  <h1 class="text-center">POSTS</h1>
+  <div class="d-flex flex-wrap justify-content-center">
+    
+    <div class="card m-2" style="width: 22rem;" *ngFor="let item of listaPosts">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ item?.user?.name }} ({{ item?.user?.username }})</h6>
+        <p class="card-text">{{ item.body }}</p>
+        <a href="#" class="card-link" [routerLink]="[item.id, 'comments']" routerLinkActive="router-link-active" >Ver comentarios</a>
+      </div>
+    </div>
+
+  </div>
+</div>
